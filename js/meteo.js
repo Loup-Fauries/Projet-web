@@ -8,6 +8,7 @@ function myFunction(){
 		.then(data => {
 			//console.table(data);
 			for(i=0; i<7; i++){
+				var cellule = document.getElementById('Cel' + i);
 				var titre = document.getElementById('Titre' + i);
 				var texte = document.getElementById('Texte' + i);
 				var photo = document.getElementById('Photo' + i);
@@ -25,6 +26,7 @@ function myFunction(){
 
 				var temp = data.list[i];
 				photo.setAttribute("src", "http://openweathermap.org/img/w/" + temp.weather[0].icon + ".png");
+				cellule.style.boxShadow = "0 6px 8px rgba(0, 0, 0, 0.15)";
 			}
 			
 			return data;})
